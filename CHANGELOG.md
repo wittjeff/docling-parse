@@ -1,3 +1,9 @@
+## [v7.19.0](https://github.com/docling-project/docling-parse/releases/tag/v7.19.0) - 2026-09-10
+
+### Feature
+
+* Adding static page-count methods ([#346](https://github.com/docling-project/docling-parse/issues/346)) ([`b36d823`](https://github.com/docling-project/docling-parse/commit/b36d8238cc7bb0bf0249d09b8b1999857c489fe7))
+
 ## [v7.18.0](https://github.com/docling-project/docling-parse/releases/tag/v7.18.0) - 2026-09-08
 
 ### Feature
