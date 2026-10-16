@@ -622,6 +622,10 @@ namespace pdflib
     }
 
     {
+      // Captured once per glyph: the cell keeps its box, the render
+      // instruction (and a Type3 glyph's mask bitmap) the paths.
+      const clip_state_instruction clip_state = shape_state.get_clip_state();
+
       page_item<PAGE_CELL> cell;
 
       cell.active = true;
@@ -893,6 +897,20 @@ namespace pdflib
 	cell.line_width         = grph_state.get_line_width();
 	cell.rgb_stroking_ops   = grph_state.get_rgb_stroking_ops();
 	cell.rgb_filling_ops    = grph_state.get_rgb_filling_ops();
+
+	// The clip in force bounds what of this glyph is visible (8.5.4). The
+	// renderer gets the clip paths through the text instruction below; a
+	// consumer of cells only sees the glyph quad, and the quad of a glyph
+	// that a producer clipped to a table cell lies under the next column.
+	std::array<double, 4> clip_bbox = {0.0, 0.0, 0.0, 0.0};
+	if(clip_state.get_bbox(clip_bbox))
+	  {
+	    cell.has_clip_bbox = true;
+	    cell.clip_x0 = clip_bbox[0];
+	    cell.clip_y0 = clip_bbox[1];
+	    cell.clip_x1 = clip_bbox[2];
+	    cell.clip_y1 = clip_bbox[3];
+	  }
       }
       
       if(need_base_text_cells)
@@ -974,7 +992,7 @@ namespace pdflib
 
         tinstr.set_fill_color(grph_state.get_rgb_filling_ops(),
                               grph_state.get_fill_alpha());
-        tinstr.set_clip_state(shape_state.get_clip_state());
+        tinstr.set_clip_state(clip_state);
         tinstr.set_rendering_mode(rendering_mode);
         tinstr.set_blend_mode(grph_state.get_blend_mode());
         tinstr.set_is_type3(font.is_type3());
@@ -1028,7 +1046,7 @@ namespace pdflib
                   grph_state.get_fill_alpha(),
                   x0, y0, x1, y1, x2, y2, x3, y3,
                   BITMAP_SOURCE_TYPE3_GLYPH,
-                  shape_state.get_clip_state());
+                  clip_state);
 
                 instructions.add_bitmap_instruction(std::move(b3));
               }
