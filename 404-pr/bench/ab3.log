@@ -1,0 +1,27 @@
+=== clipped cells per level, bench-tagged-20, shapes skipped (PR build, #964) ===
+char: 102092 of 267093 cells carry a clip box
+word: 14880 of 44453 cells carry a clip box
+line: 2400 of 12803 cells carry a clip box
+total clip boxes: 119372
+=== corpus=bench-tagged-20 skip_shapes=1 core=964 (7 passes, cached build) ===
+run 1 main: 17.49 s, maxrss 567 MiB, 147 pages, 44447 words, 0 clipped
+run 1 pr443: 18.00 s, maxrss 578 MiB, 147 pages, 44453 words, 14880 clipped
+run 2 pr443: 17.77 s, maxrss 576 MiB, 147 pages, 44453 words, 14880 clipped
+run 2 main: 16.72 s, maxrss 567 MiB, 147 pages, 44447 words, 0 clipped
+run 3 main: 16.73 s, maxrss 567 MiB, 147 pages, 44447 words, 0 clipped
+run 3 pr443: 17.73 s, maxrss 578 MiB, 147 pages, 44453 words, 14880 clipped
+run 4 pr443: 17.79 s, maxrss 576 MiB, 147 pages, 44453 words, 14880 clipped
+run 4 main: 16.68 s, maxrss 570 MiB, 147 pages, 44447 words, 0 clipped
+run 5 main: 16.54 s, maxrss 567 MiB, 147 pages, 44447 words, 0 clipped
+run 5 pr443: 17.83 s, maxrss 578 MiB, 147 pages, 44453 words, 14880 clipped
+run 6 pr443: 18.21 s, maxrss 578 MiB, 147 pages, 44453 words, 14880 clipped
+run 6 main: 16.57 s, maxrss 567 MiB, 147 pages, 44447 words, 0 clipped
+run 7 main: 16.57 s, maxrss 570 MiB, 147 pages, 44447 words, 0 clipped
+run 7 pr443: 17.87 s, maxrss 577 MiB, 147 pages, 44453 words, 14880 clipped
+
+main: time min=16.54 median=16.68 max=17.49 s; maxrss min=567 median=567 MiB; 7 passes; pages/words/clipped=('147', '44447', '0')
+pr443: time min=17.73 median=17.83 max=18.21 s; maxrss min=576 median=578 MiB; 7 passes; pages/words/clipped=('147', '44453', '14880')
+pr443 vs main: time median ratio 1.069, maxrss median ratio 1.018
+venv back on 2.103.1
+AB3_DONE
+exit=0

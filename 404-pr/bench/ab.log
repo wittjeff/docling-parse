@@ -1,0 +1,92 @@
+##### phase 1: PR venv with docling-core#964
+=== corpus=bench-untagged skip_shapes=0 core=964 ===
+run 1 main: 188.80 s, maxrss 1524 MiB, 1021 pages, 311366 words, 0 clipped
+run 1 pr443: 213.70 s, maxrss 1522 MiB, 1021 pages, 311367 words, 50281 clipped
+run 2 pr443: 238.00 s, maxrss 1521 MiB, 1021 pages, 311367 words, 50281 clipped
+run 2 main: 222.38 s, maxrss 1516 MiB, 1021 pages, 311366 words, 0 clipped
+run 3 main: 228.30 s, maxrss 1523 MiB, 1021 pages, 311366 words, 0 clipped
+run 3 pr443: 192.27 s, maxrss 1522 MiB, 1021 pages, 311367 words, 50281 clipped
+
+main: time min=188.80 median=222.38 max=228.30 s; maxrss min=1516 median=1523 MiB; 3 passes; pages/words/clipped=('1021', '311366', '0')
+pr443: time min=192.27 median=213.70 max=238.00 s; maxrss min=1521 median=1522 MiB; 3 passes; pages/words/clipped=('1021', '311367', '50281')
+pr443 vs main: time median ratio 0.961, maxrss median ratio 0.999
+=== corpus=bench-untagged skip_shapes=1 core=964 ===
+run 1 main: 176.97 s, maxrss 1515 MiB, 1021 pages, 311366 words, 0 clipped
+run 1 pr443: 187.03 s, maxrss 1521 MiB, 1021 pages, 311367 words, 50281 clipped
+run 2 pr443: 193.31 s, maxrss 1520 MiB, 1021 pages, 311367 words, 50281 clipped
+run 2 main: 363.11 s, maxrss 1511 MiB, 1021 pages, 311366 words, 0 clipped
+run 3 main: 250.31 s, maxrss 1515 MiB, 1021 pages, 311366 words, 0 clipped
+run 3 pr443: 196.17 s, maxrss 1519 MiB, 1021 pages, 311367 words, 50281 clipped
+
+main: time min=176.97 median=250.31 max=363.11 s; maxrss min=1511 median=1515 MiB; 3 passes; pages/words/clipped=('1021', '311366', '0')
+pr443: time min=187.03 median=193.31 max=196.17 s; maxrss min=1519 median=1520 MiB; 3 passes; pages/words/clipped=('1021', '311367', '50281')
+pr443 vs main: time median ratio 0.772, maxrss median ratio 1.004
+=== corpus=bench-tagged-20 skip_shapes=0 core=964 ===
+run 1 main: 25.16 s, maxrss 633 MiB, 147 pages, 44447 words, 0 clipped
+run 1 pr443: 26.04 s, maxrss 647 MiB, 147 pages, 44453 words, 14880 clipped
+run 2 pr443: 26.70 s, maxrss 643 MiB, 147 pages, 44453 words, 14880 clipped
+run 2 main: 25.63 s, maxrss 631 MiB, 147 pages, 44447 words, 0 clipped
+run 3 main: 27.20 s, maxrss 633 MiB, 147 pages, 44447 words, 0 clipped
+run 3 pr443: 38.97 s, maxrss 647 MiB, 147 pages, 44453 words, 14880 clipped
+
+main: time min=25.16 median=25.63 max=27.20 s; maxrss min=631 median=633 MiB; 3 passes; pages/words/clipped=('147', '44447', '0')
+pr443: time min=26.04 median=26.70 max=38.97 s; maxrss min=643 median=647 MiB; 3 passes; pages/words/clipped=('147', '44453', '14880')
+pr443 vs main: time median ratio 1.042, maxrss median ratio 1.023
+=== corpus=bench-tagged-20 skip_shapes=1 core=964 ===
+run 1 main: 30.90 s, maxrss 573 MiB, 147 pages, 44447 words, 0 clipped
+run 1 pr443: 37.68 s, maxrss 580 MiB, 147 pages, 44453 words, 14880 clipped
+run 2 pr443: 31.62 s, maxrss 582 MiB, 147 pages, 44453 words, 14880 clipped
+run 2 main: 31.74 s, maxrss 566 MiB, 147 pages, 44447 words, 0 clipped
+run 3 main: 21.57 s, maxrss 568 MiB, 147 pages, 44447 words, 0 clipped
+run 3 pr443: 21.10 s, maxrss 582 MiB, 147 pages, 44453 words, 14880 clipped
+
+main: time min=21.57 median=30.90 max=31.74 s; maxrss min=566 median=568 MiB; 3 passes; pages/words/clipped=('147', '44447', '0')
+pr443: time min=21.10 median=31.62 max=37.68 s; maxrss min=580 median=582 MiB; 3 passes; pages/words/clipped=('147', '44453', '14880')
+pr443 vs main: time median ratio 1.023, maxrss median ratio 1.025
+##### phase 2: PR venv with locked docling-core 2.103.1
+=== corpus=bench-untagged skip_shapes=0 core=2.103.1 ===
+run 1 main: 198.37 s, maxrss 1520 MiB, 1021 pages, 311366 words, 0 clipped
+run 1 pr443: 194.08 s, maxrss 1521 MiB, 1021 pages, 311367 words, 0 clipped
+run 2 pr443: 187.43 s, maxrss 1521 MiB, 1021 pages, 311367 words, 0 clipped
+run 2 main: 196.90 s, maxrss 1517 MiB, 1021 pages, 311366 words, 0 clipped
+run 3 main: 190.85 s, maxrss 1518 MiB, 1021 pages, 311366 words, 0 clipped
+run 3 pr443: 187.69 s, maxrss 1521 MiB, 1021 pages, 311367 words, 0 clipped
+
+main: time min=190.85 median=196.90 max=198.37 s; maxrss min=1517 median=1518 MiB; 3 passes; pages/words/clipped=('1021', '311366', '0')
+pr443: time min=187.43 median=187.69 max=194.08 s; maxrss min=1521 median=1521 MiB; 3 passes; pages/words/clipped=('1021', '311367', '0')
+pr443 vs main: time median ratio 0.953, maxrss median ratio 1.002
+=== corpus=bench-untagged skip_shapes=1 core=2.103.1 ===
+run 1 main: 185.20 s, maxrss 1519 MiB, 1021 pages, 311366 words, 0 clipped
+run 1 pr443: 177.94 s, maxrss 1517 MiB, 1021 pages, 311367 words, 0 clipped
+run 2 pr443: 179.21 s, maxrss 1520 MiB, 1021 pages, 311367 words, 0 clipped
+run 2 main: 186.24 s, maxrss 1513 MiB, 1021 pages, 311366 words, 0 clipped
+run 3 main: 190.75 s, maxrss 1519 MiB, 1021 pages, 311366 words, 0 clipped
+run 3 pr443: 204.41 s, maxrss 1517 MiB, 1021 pages, 311367 words, 0 clipped
+
+main: time min=185.20 median=186.24 max=190.75 s; maxrss min=1513 median=1519 MiB; 3 passes; pages/words/clipped=('1021', '311366', '0')
+pr443: time min=177.94 median=179.21 max=204.41 s; maxrss min=1517 median=1517 MiB; 3 passes; pages/words/clipped=('1021', '311367', '0')
+pr443 vs main: time median ratio 0.962, maxrss median ratio 0.999
+=== corpus=bench-tagged-20 skip_shapes=0 core=2.103.1 ===
+run 1 main: 24.78 s, maxrss 635 MiB, 147 pages, 44447 words, 0 clipped
+run 1 pr443: 24.90 s, maxrss 640 MiB, 147 pages, 44453 words, 0 clipped
+run 2 pr443: 24.17 s, maxrss 643 MiB, 147 pages, 44453 words, 0 clipped
+run 2 main: 23.09 s, maxrss 635 MiB, 147 pages, 44447 words, 0 clipped
+run 3 main: 27.44 s, maxrss 631 MiB, 147 pages, 44447 words, 0 clipped
+run 3 pr443: 26.92 s, maxrss 643 MiB, 147 pages, 44453 words, 0 clipped
+
+main: time min=23.09 median=24.78 max=27.44 s; maxrss min=631 median=635 MiB; 3 passes; pages/words/clipped=('147', '44447', '0')
+pr443: time min=24.17 median=24.90 max=26.92 s; maxrss min=640 median=643 MiB; 3 passes; pages/words/clipped=('147', '44453', '0')
+pr443 vs main: time median ratio 1.005, maxrss median ratio 1.011
+=== corpus=bench-tagged-20 skip_shapes=1 core=2.103.1 ===
+run 1 main: 18.39 s, maxrss 568 MiB, 147 pages, 44447 words, 0 clipped
+run 1 pr443: 20.65 s, maxrss 578 MiB, 147 pages, 44453 words, 0 clipped
+run 2 pr443: 19.85 s, maxrss 578 MiB, 147 pages, 44453 words, 0 clipped
+run 2 main: 18.04 s, maxrss 568 MiB, 147 pages, 44447 words, 0 clipped
+run 3 main: 18.92 s, maxrss 573 MiB, 147 pages, 44447 words, 0 clipped
+run 3 pr443: 18.97 s, maxrss 580 MiB, 147 pages, 44453 words, 0 clipped
+
+main: time min=18.04 median=18.39 max=18.92 s; maxrss min=568 median=568 MiB; 3 passes; pages/words/clipped=('147', '44447', '0')
+pr443: time min=18.97 median=19.85 max=20.65 s; maxrss min=578 median=578 MiB; 3 passes; pages/words/clipped=('147', '44453', '0')
+pr443 vs main: time median ratio 1.079, maxrss median ratio 1.018
+AB_DONE
+exit=0

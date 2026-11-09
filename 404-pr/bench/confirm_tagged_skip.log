@@ -1,0 +1,19 @@
+run 1 main: 19.32 s, maxrss 567 MiB, 147 pages, 44447 words, 0 clipped
+run 1 pr443: 23.71 s, maxrss 573 MiB, 147 pages, 44453 words, 0 clipped
+run 2 pr443: 20.66 s, maxrss 573 MiB, 147 pages, 44453 words, 0 clipped
+run 2 main: 20.08 s, maxrss 569 MiB, 147 pages, 44447 words, 0 clipped
+run 3 main: 19.85 s, maxrss 568 MiB, 147 pages, 44447 words, 0 clipped
+run 3 pr443: 20.79 s, maxrss 578 MiB, 147 pages, 44453 words, 0 clipped
+run 4 pr443: 19.98 s, maxrss 578 MiB, 147 pages, 44453 words, 0 clipped
+run 4 main: 19.20 s, maxrss 567 MiB, 147 pages, 44447 words, 0 clipped
+run 5 main: 20.36 s, maxrss 568 MiB, 147 pages, 44447 words, 0 clipped
+run 5 pr443: 20.05 s, maxrss 578 MiB, 147 pages, 44453 words, 0 clipped
+run 6 pr443: 18.32 s, maxrss 578 MiB, 147 pages, 44453 words, 0 clipped
+run 6 main: 18.53 s, maxrss 568 MiB, 147 pages, 44447 words, 0 clipped
+run 7 main: 17.68 s, maxrss 567 MiB, 147 pages, 44447 words, 0 clipped
+run 7 pr443: 18.36 s, maxrss 578 MiB, 147 pages, 44453 words, 0 clipped
+
+main: time min=17.68 median=19.32 max=20.36 s; maxrss min=567 median=568 MiB; 7 passes; pages/words/clipped=('147', '44447', '0')
+pr443: time min=18.32 median=20.05 max=23.71 s; maxrss min=573 median=578 MiB; 7 passes; pages/words/clipped=('147', '44453', '0')
+pr443 vs main: time median ratio 1.037, maxrss median ratio 1.018
+exit=0
